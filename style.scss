@@ -5,59 +5,93 @@
 @import 'mixins';
 @import 'variables';
 
-html,
-body {
+* {
     margin: 0;
     padding: 0;
-    height: 100%;
+}
+body {
+    min-height: 100vh;
     width: 100%;
+    background-color: beige;
 }
 
 nav {
-    @include flex-center;
-    justify-content: space-between;
-    height: 10%;
+background-color: pink;
+width: 100%;
+height: 10vh;
+display: flex;
+// Detta är headern
+
+ul {
     width: 100%;
-    background-color: pink;
-    position: sticky;
-    top: 0;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
 
-    .logo {
-        @include flex-center;
-        padding: 1px;
-        width: 30%;
-    }
 
-    .menu {
-        width: 40%;
 
-        
+a {
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: black;
 
-        ul {
-            display: flex;
-            flex-direction: row;
-            @include flex-center;
-            list-style-type: none;
-
-            li {
-                margin: 5%;
-            }
-
-            a {
-                text-decoration: none;
-                color: black;
-            }
-
-            a:hover {
-                text-decoration: underline;
-            }
-        }
+    a:active {
+        text-decoration: underline;
     }
 }
 
+nav li:first-child {
+    margin-right: auto;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 999; 
+    // "z-index: 999" Gör så att sidebar alltid ligger överst
+
+    background-color: rgba(255, 255, 255, 0.247);
+    backdrop-filter: blur(10px);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+    
+
+    .hidebar {
+        height: 10vh;
+        width: 100%;
+    }
+
+    a {
+        width: 100%;
+        height: fit-content;
+        margin-top: 3.5vh;
+    }
+
+    a:active {
+        text-decoration: underline;
+    }
+
+    
+}
+
+}
+
+
 footer {
     @include flex-center;
-    height: 5%;
+    height: 5vh;
     width: 100%;
     background-color: pink;
     position: sticky;
@@ -66,6 +100,21 @@ footer {
 
 main {
     @include flex-center;
-    height: 100%;
+    min-height: 100vh;
     width: 100%;
 }
+
+@media screen and (min-width: 800px) {
+
+  .hide-on-desktop {
+    display: none;
+}
+}
+
+@media screen and (max-width: 800px) {
+    .show-on-desktop {
+        display: none;
+    }
+}
+
+

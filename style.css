@@ -1,51 +1,72 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-html,
-body {
+* {
   margin: 0;
   padding: 0;
-  height: 100%;
+}
+
+body {
+  min-height: 100vh;
   width: 100%;
+  background-color: beige;
 }
 
 nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  justify-content: space-between;
-  height: 10%;
-  width: 100%;
   background-color: pink;
-  position: sticky;
-  top: 0;
-}
-nav .logo {
+  width: 100%;
+  height: 10vh;
   display: flex;
-  justify-content: center;
+}
+nav ul {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
   align-items: center;
-  padding: 1px;
-  width: 30%;
 }
-nav .menu {
-  width: 40%;
-}
-nav .menu ul {
-  display: flex;
-  flex-direction: row;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  list-style-type: none;
-}
-nav .menu ul li {
-  margin: 5%;
-}
-nav .menu ul a {
+nav a {
+  height: 100%;
+  padding: 0 30px;
   text-decoration: none;
+  display: flex;
+  align-items: center;
   color: black;
 }
-nav .menu ul a:hover {
+nav a a:active {
+  text-decoration: underline;
+}
+nav nav li:first-child {
+  margin-right: auto;
+}
+nav .sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 999;
+  background-color: rgba(255, 255, 255, 0.247);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+}
+nav .sidebar .hidebar {
+  height: 10vh;
+  width: 100%;
+}
+nav .sidebar a {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-top: 3.5vh;
+}
+nav .sidebar a:active {
   text-decoration: underline;
 }
 
@@ -53,7 +74,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 5%;
+  height: 5vh;
   width: 100%;
   background-color: pink;
   position: sticky;
@@ -64,8 +85,17 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  min-height: 100vh;
   width: 100%;
 }
 
-/*# sourceMappingURL=style.css.map */
+@media screen and (min-width: 800px) {
+  .hide-on-desktop {
+    display: none;
+  }
+}
+@media screen and (max-width: 800px) {
+  .show-on-desktop {
+    display: none;
+  }
+}/*# sourceMappingURL=style.css.map */
