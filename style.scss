@@ -90,6 +90,11 @@ nav li:first-child {
 
 
 // Evenemang
+
+.event_rubrik {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
 .evenemang_main {
     display: flex;
     flex-direction: column;
@@ -99,11 +104,13 @@ nav li:first-child {
 .event {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    margin-top: 7%;
-    margin-bottom: 5%;
-    padding: 2%;
-    align-items: center
+    // width: 100%;
+    margin-top: 1.5rem; // 24px
+    margin-bottom: 2rem; // 36px
+    padding: 1rem; // 16px
+    align-items: center;
+    width: 50%; // All elements the same width
+    box-shadow: 0rem 1.5rem 1.5rem 1rem rgba(0,0,0,.5);
 }
 
 .evenemang_dl {
