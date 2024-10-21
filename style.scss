@@ -94,6 +94,7 @@ nav li:first-child {
 .event_rubrik {
     margin-top: 1rem;
     margin-bottom: 1rem;
+    font-family: "Playwrite GB S", cursive;
 }
 .evenemang_main {
     display: flex;
@@ -110,7 +111,7 @@ nav li:first-child {
     padding: 1rem; // 16px
     align-items: center;
     width: 50%; // All elements the same width
-    box-shadow: 0rem 1.5rem 1.5rem 1rem rgba(0,0,0,.5);
+    box-shadow: 0rem 1.5rem 1.5rem 1rem rgba(0,0,0,.5); // first value horizontal offset, second vertical offset
 }
 
 .evenemang_dl {
@@ -157,6 +158,33 @@ main {
 @media screen and (max-width: 800px) {
     .show-on-desktop {
         display: none;
+    }
+}
+
+
+// // Evenemang
+// @media screen and (min-width: 800px) {
+//     .event-container { // Ensure this targets the container for the events
+//         display: flex; // Use flexbox for layout
+//         flex-direction: row; // Change direction to row
+//         flex-wrap: wrap; // Allow wrapping to multiple rows
+//         justify-content: space-between; // Distribute space evenly between items
+//     }
+
+//     .event {
+//         flex-direction: column; // Keep individual event's direction as column
+//         width: 50%; // Adjust width to allow for multiple items in a row
+//         margin-bottom: 2rem; // Maintain vertical spacing between rows
+//     }
+// }
+
+
+
+// Evenemang
+@media screen and (min-width: 800px) {
+    .event {
+        flex-direction: row;
+        justify-content: space-between; // Distribute space evenly between items
     }
 }
 
