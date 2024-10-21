@@ -5,16 +5,16 @@
 @import 'mixins';
 @import 'variables';
 
-* {
+html , body {
     margin: 0;
     padding: 0;
-}
-
-body {
     min-height: 100vh;
     width: 100vw;
     color: $font-color;
     background-color: $body-color;
+    display: flex;
+    flex-direction: column;
+    white-space: none;
 }
 
 nav {
@@ -62,9 +62,9 @@ nav {
 
 
 
-    nav li:first-child {
-        margin-right: auto;
-    }
+    // nav li:first-child {
+    //     margin-right: auto;
+    // }
 
     .sidebar {
         position: fixed;
@@ -85,16 +85,17 @@ nav {
         padding: 0;
 
 
-        .hidebar {
-            height: 10vh;
-            width: 100%;
-        }
+        // .hidebar {
+        //     height: 10vh;
+        //     width: 100%;
+        // }
 
         a {
             width: 100%;
             height: fit-content;
             margin-top: 3.5vh;
             color: black;
+            
         }
 
         a:active {
@@ -108,7 +109,7 @@ nav {
 
 // Startsidan
 .startsida-main {
-    min-height: 80vh;  
+    min-height: 80vh;
     display: flex;
     flex-direction: column;
     justify-items: center;
@@ -144,8 +145,9 @@ nav {
     font-size: 1.5rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    font-family:"Overpass", sans-serif;
+    font-family: "Overpass", sans-serif;
 }
+
 .evenemang_main {
     display: flex;
     flex-direction: column;
@@ -163,7 +165,7 @@ nav {
     align-items: center;
     width: 50%; // All elements the same width
     font-family: "Hind Siliguri", sans-serif;
-    box-shadow: 0rem 1.5rem 1.5rem 1rem rgba(0,0,0,.5); // first value horizontal offset, second vertical offset
+    box-shadow: 0rem 1.5rem 1.5rem 1rem rgba(0, 0, 0, .5); // first value horizontal offset, second vertical offset
 }
 
 .evenemang_dl {
@@ -179,19 +181,251 @@ dt {
 }
 
 dd {
-    margin: 0;  // Removes any default margin that might be applied to the <dd> (description data) element by the browser.
+    margin: 0; // Removes any default margin that might be applied to the <dd> (description data) element by the browser.
 }
 
-footer {
-    @include flex-center;
-    height: 10vh;
-    width: 100%;
-    background-color: $hf-color;
-    margin: 0;
-    position: sticky;
-    bottom: 0;
+// Nyheter
+
+.nyhetsmain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100vw;
 }
 
+.veckansbok { //fixa z-index
+    width: 81%;
+    height: 24%;
+    position: absolute;
+    top: 15%;
+   
+    text-align: center;
+    z-index: -100;
+   }
+   
+   .test{
+     object-fit: cover;
+     width: 100%; /* Gör att bilden fyller förälderns bredd */
+     height: 100%;
+   }
+   
+   
+   .genre{
+     display: flex;
+     text-align: left;
+     height: fit-content;
+     width: fit-content;
+   
+     position: absolute;
+     left: 10%;
+     z-index: -100;
+     top: 50%;
+   
+     font-size: large;
+     font-weight: bold;
+   }
+   
+   .genre2{
+    display: flex;
+    text-align: left;
+    height: fit-content;
+    width: fit-content;
+  
+    position: absolute;
+    bottom: 2%;
+    left: 10%;
+    z-index: -100;
+    font-size: large;
+    font-weight: bold;
+}
+
+   .förstaraden {
+     display: flex; 
+     overflow-x: auto; 
+     scroll-snap-type: x mandatory; 
+     height: fit-content;
+     width: 80%;
+     bottom: 6%;
+     gap: 16px; /* gap mellan böckerna */
+     scroll-behavior: smooth; 
+
+     padding-top: 200px;
+   }
+   
+   .andraraden {
+     display: flex; 
+     overflow-x: auto; 
+     scroll-snap-type: x mandatory;
+     height: fit-content;
+     width: 80%; /* Fyller hela bredden */
+     //position: absolute;
+     bottom: -35%;
+   
+     gap: 16px; /* Mellanrum mellan böckerna */
+     scroll-behavior: smooth; 
+   }
+   
+   .tredjeraden {
+    display: flex; 
+    overflow-x: auto; 
+    scroll-snap-type: x mandatory;
+    height: fit-content;
+    width: 80%; 
+    position: absolute;
+    bottom: -77%;
+  
+    gap: 16px; /* mellanrum mellan böckerna */
+    scroll-behavior: smooth; 
+  }
+
+   .genrebok {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     height: 300px; /* Fast höjd för alla böcker */
+     width: 200px;  /* Fast bredd för alla böcker */
+     background-color: #e2dada;
+     flex-shrink: 0; 
+     scroll-snap-align: start;
+   }
+   
+   .genrebok picture {
+     height: 80%; /* Se till att bilden fyller 80% av bokhöjden */
+     width: 100%; 
+     display: flex; 
+     justify-content: center; 
+     //align-items: center; 
+   }
+   
+   .bokbild img {
+     object-fit: contain;
+     width: 100%; 
+     height: 100%; 
+     display: block;
+     transition: transform 0.2s; /* Ändrat från scale till transform */
+   }
+   
+   .bokbild:hover { /* Inga mellanslag */
+     transform: scale(1.05);
+     cursor: pointer;
+   }
+   
+   .genrebok p {
+     width: 100%;
+     text-align: center;
+     margin: 0;
+     padding-top: 5px;
+     font-size: 14px;
+   }
+
+   /* Nyhets Scrollbarn styling */
+
+   ::-webkit-scrollbar {
+    width: 12px; 
+    height: 8px; 
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 5px; 
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 5px; 
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+//   Recensioner
+
+.rev-section{
+   
+    margin: auto;
+    padding: 1rem;
+    max-width: 1000px;
+    text-align: center;
+
+    img{
+        display: flex;
+        flex-direction: row;
+        width: 75%;
+        height: 75%;
+        object-fit: cover;
+        border-radius: 50%;
+        box-shadow: 0 10px 25px rgb(231, 138, 138);
+    }
+}
+.title{
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: rgb(18, 13, 13);
+    margin-bottom: .5rem;
+}
+.note{
+    font-size: 1.1rem;
+    color: rgb(112, 100, 100);
+    font-style: italic;
+}
+.reviews{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 2rem auto;
+    flex-wrap: wrap;
+}
+.review{
+    margin:  1rem;
+    min-width: 30px;
+    
+}
+.head-review{
+    display: flex;
+    flex-direction: row;
+    margin: 1.75rem auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 10%;
+}
+
+.body-review{
+    background-color: rgb(252, 247, 242);
+    padding: 2.5rem;
+    box-shadow:0 5px 15px rgb(220, 134, 134);
+}
+.body-review:hover{
+    transform: scale(1.1);
+}
+.namve-review{
+    font-size: 1.5rem;
+    color: black;
+    margin-bottom: .25rem;
+}
+.place-review{
+    color: blue;
+    font-size: 1rem;
+    margin-bottom:.25rem;
+    font-style: italic;
+}
+.rating{
+    color: rgba(255, 243, 6, 0.909);
+    margin: 1rem 0;
+}
+.description{
+    color: rgb(193, 178, 178);
+    letter-spacing: 1px;
+    line-height: 1.5rem;
+}
+@media (max-width:678px){
+    .review{
+        margin-top: 1.5rem;
+    }
+}
 
 
 @media screen and (min-width: 800px) {
@@ -207,7 +441,7 @@ footer {
 
     .event_rubrik {
         font-size: 2rem;
-        font-family:"Overpass", sans-serif;
+        font-family: "Overpass", sans-serif;
     }
 }
 
@@ -216,3 +450,4 @@ footer {
         display: none;
     }
 }
+
