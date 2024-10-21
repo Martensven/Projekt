@@ -9,106 +9,197 @@
     margin: 0;
     padding: 0;
 }
+
 body {
     min-height: 100vh;
-    width: 100%;
-    background-color: beige;
+    width: 100vw;
+    color: $font-color;
+    background-color: $body-color;
 }
 
 nav {
-background-color: pink;
-width: 100%;
-height: 10vh;
-display: flex;
-// Detta är headern
-
-ul {
+    background-color: $hf-color;
     width: 100%;
-    list-style: none;
+    height: 10vh;
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-
-
-a {
-    height: 100%;
-    padding: 0 30px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    color: black;
-
-    a:active {
-        text-decoration: underline;
-    }
-}
-
-nav li:first-child {
-    margin-right: auto;
-}
-
-.sidebar {
-    position: fixed;
+    position: sticky;
     top: 0;
-    right: 0;
-    height: 100vh;
-    width: 100%;
-    z-index: 999; 
-    // "z-index: 999" Gör så att sidebar alltid ligger överst
+    // Detta är headern
 
-    background-color: rgba(255, 255, 255, 0.247);
-    backdrop-filter: blur(10px);
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    margin: 0;
-    padding: 0;
-    
-
-    .hidebar {
-        height: 10vh;
+    ul {
         width: 100%;
+        list-style: none;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
     }
+
+
 
     a {
-        width: 100%;
-        height: fit-content;
-        margin-top: 3.5vh;
+        height: 100%;
+        padding: 0 30px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        color: white;
+
+        .pink {
+            color: pink;
+            text-decoration: none;
+        }
+
+        .white {
+            color: white;
+            text-decoration: none;
+        }
+
     }
 
     a:active {
         text-decoration: underline;
     }
 
-    
-}
+
+
+    nav li:first-child {
+        margin-right: auto;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 100%;
+        z-index: 999;
+        // "z-index: 999" Gör så att sidebar alltid ligger överst
+
+        background-color: $body-color;
+        backdrop-filter: blur(10px);
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin: 0;
+        padding: 0;
+
+
+        .hidebar {
+            height: 10vh;
+            width: 100%;
+        }
+
+        a {
+            width: 100%;
+            height: fit-content;
+            margin-top: 3.5vh;
+        }
+
+        a:active {
+            text-decoration: underline;
+        }
+
+
+    }
 
 }
 
+// Startsidan
+.startsida-main {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+
+    h2 {
+        color: red;
+        margin-top: 2em;
+        width: 80%;
+        text-align: center;
+    }
+
+    p {
+        color: $font-color;
+        margin-top: 2em;
+        width: 80%;
+        text-align: center;
+    }
+
+
+
+}
+
+// Evenemang
+.event_rubrik {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-family:"Overpass", sans-serif;
+}
+.evenemang_main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.event {
+    display: flex;
+    flex-direction: column;
+    // width: 100%;
+    margin-top: 1.5rem; // 24px
+    margin-bottom: 2rem; // 36px
+    padding: 1rem; // 16px
+    align-items: center;
+    width: 50%; // All elements the same width
+    font-family: "Hind Siliguri", sans-serif;
+    box-shadow: 0rem 1.5rem 1.5rem 1rem rgba(0,0,0,.5); // first value horizontal offset, second vertical offset
+}
+
+.evenemang_dl {
+    display: grid; // Best for two dimentional layout, using grid not flex
+    grid-template-columns: auto 1fr; // Makes info appear side by side instead of stacking vertically
+    gap: 10px 20px; // First value gap between rows (vertical spacing) second value gap between columns (horizontal spacing)
+    align-items: center
+}
+
+dt {
+    font-weight: bold; // Writing bold, sticks out more
+    margin-top: 7%;
+}
+
+dd {
+    margin: 0;  // Removes any default margin that might be applied to the <dd> (description data) element by the browser.
+}
 
 footer {
     @include flex-center;
-    height: 5vh;
+    height: 10vh;
     width: 100%;
-    background-color: pink;
+    background-color: $hf-color;
     position: sticky;
     bottom: 0;
 }
 
-main {
-    @include flex-center;
-    min-height: 100vh;
-    width: 100%;
-}
+
 
 @media screen and (min-width: 800px) {
 
-  .hide-on-desktop {
-    display: none;
-}
+    .hide-on-desktop {
+        display: none;
+    }
+
+    .event {
+        flex-direction: row;
+        justify-content: space-between; // Distribute space evenly between items
+    }
+
+    .event_rubrik {
+        font-size: 2rem;
+        font-family:"Overpass", sans-serif;
+    }
 }
 
 @media screen and (max-width: 800px) {
@@ -116,5 +207,3 @@ main {
         display: none;
     }
 }
-
-

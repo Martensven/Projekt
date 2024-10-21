@@ -8,15 +8,18 @@
 
 body {
   min-height: 100vh;
-  width: 100%;
+  width: 100vw;
+  color: black;
   background-color: beige;
 }
 
 nav {
-  background-color: pink;
+  background-color: #9B1717;
   width: 100%;
   height: 10vh;
   display: flex;
+  position: sticky;
+  top: 0;
 }
 nav ul {
   width: 100%;
@@ -31,9 +34,17 @@ nav a {
   text-decoration: none;
   display: flex;
   align-items: center;
-  color: black;
+  color: white;
 }
-nav a a:active {
+nav a .pink {
+  color: pink;
+  text-decoration: none;
+}
+nav a .white {
+  color: white;
+  text-decoration: none;
+}
+nav a:active {
   text-decoration: underline;
 }
 nav nav li:first-child {
@@ -46,7 +57,7 @@ nav .sidebar {
   height: 100vh;
   width: 100%;
   z-index: 999;
-  background-color: rgba(255, 255, 255, 0.247);
+  background-color: beige;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   display: none;
@@ -70,28 +81,90 @@ nav .sidebar a:active {
   text-decoration: underline;
 }
 
+.startsida-main {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+.startsida-main h2 {
+  color: red;
+  margin-top: 2em;
+  width: 80%;
+  text-align: center;
+}
+.startsida-main p {
+  color: black;
+  margin-top: 2em;
+  width: 80%;
+  text-align: center;
+}
+
+.event_rubrik {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-family: "Overpass", sans-serif;
+}
+
+.evenemang_main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.event {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  align-items: center;
+  width: 50%;
+  font-family: "Hind Siliguri", sans-serif;
+  box-shadow: 0rem 1.5rem 1.5rem 1rem rgba(0, 0, 0, 0.5);
+}
+
+.evenemang_dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px 20px;
+  align-items: center;
+}
+
+dt {
+  font-weight: bold;
+  margin-top: 7%;
+}
+
+dd {
+  margin: 0;
+}
+
 footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 5vh;
+  height: 10vh;
   width: 100%;
-  background-color: pink;
+  background-color: #9B1717;
   position: sticky;
   bottom: 0;
-}
-
-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  width: 100%;
 }
 
 @media screen and (min-width: 800px) {
   .hide-on-desktop {
     display: none;
+  }
+  .event {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .event_rubrik {
+    font-size: 2rem;
+    font-family: "Overpass", sans-serif;
   }
 }
 @media screen and (max-width: 800px) {
