@@ -47,8 +47,7 @@ nav .sidebar {
   width: 100%;
   z-index: 999;
   background-color: rgba(255, 255, 255, 0.247);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   display: none;
   flex-direction: column;
   align-items: flex-start;
@@ -62,12 +61,52 @@ nav .sidebar .hidebar {
 }
 nav .sidebar a {
   width: 100%;
-  height: -moz-fit-content;
   height: fit-content;
   margin-top: 3.5vh;
 }
 nav .sidebar a:active {
   text-decoration: underline;
+}
+
+.event_rubrik {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-family: "Overpass", sans-serif;
+}
+
+.evenemang_main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.event {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  align-items: center;
+  width: 50%;
+  font-family: "Hind Siliguri", sans-serif;
+  box-shadow: 0rem 1.5rem 1.5rem 1rem rgba(0, 0, 0, 0.5);
+}
+
+.evenemang_dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px 20px;
+  align-items: center;
+}
+
+dt {
+  font-weight: bold;
+  margin-top: 7%;
+}
+
+dd {
+  margin: 0;
 }
 
 footer {
@@ -98,4 +137,16 @@ main {
   .show-on-desktop {
     display: none;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+@media screen and (min-width: 800px) {
+  .event {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .event_rubrik {
+    font-size: 2rem;
+    font-family: "Overpass", sans-serif;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
