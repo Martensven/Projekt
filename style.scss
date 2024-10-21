@@ -88,6 +88,8 @@ nav li:first-child {
 
 }
 
+
+// Evenemang
 .evenemang_main {
     display: flex;
     flex-direction: column;
@@ -98,7 +100,26 @@ nav li:first-child {
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-bottom: 20px;
+    margin-top: 7%;
+    margin-bottom: 5%;
+    padding: 2%;
+    align-items: center
+}
+
+.evenemang_dl {
+    display: grid; // Best for two dimentional layout, using grid not flex
+    grid-template-columns: auto 1fr; // Makes info appear side by side instead of stacking vertically
+    gap: 10px 20px; // First value gap between rows (vertical spacing) second value gap between columns (horizontal spacing)
+    align-items: center
+}
+
+dt {
+    font-weight: bold; // Writing bold, sticks out more
+    margin-top: 7%;
+}
+
+dd {
+    margin: 0;  // Remowes any default margin that might be applied to the <dd> (description data) element by the browser.
 }
 
 
