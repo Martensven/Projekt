@@ -92,9 +92,10 @@ nav li:first-child {
 // Evenemang
 
 .event_rubrik {
+    font-size: 1.5rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    font-family: "Playwrite GB S", cursive;
+    font-family:"Overpass", sans-serif;
 }
 .evenemang_main {
     display: flex;
@@ -111,6 +112,7 @@ nav li:first-child {
     padding: 1rem; // 16px
     align-items: center;
     width: 50%; // All elements the same width
+    font-family: "Hind Siliguri", sans-serif;
     box-shadow: 0rem 1.5rem 1.5rem 1rem rgba(0,0,0,.5); // first value horizontal offset, second vertical offset
 }
 
@@ -162,29 +164,17 @@ main {
 }
 
 
-// // Evenemang
-// @media screen and (min-width: 800px) {
-//     .event-container { // Ensure this targets the container for the events
-//         display: flex; // Use flexbox for layout
-//         flex-direction: row; // Change direction to row
-//         flex-wrap: wrap; // Allow wrapping to multiple rows
-//         justify-content: space-between; // Distribute space evenly between items
-//     }
-
-//     .event {
-//         flex-direction: column; // Keep individual event's direction as column
-//         width: 50%; // Adjust width to allow for multiple items in a row
-//         margin-bottom: 2rem; // Maintain vertical spacing between rows
-//     }
-// }
-
-
 
 // Evenemang
 @media screen and (min-width: 800px) {
     .event {
         flex-direction: row;
         justify-content: space-between; // Distribute space evenly between items
+    }
+
+    .event_rubrik {
+        font-size: 2rem;
+        font-family:"Overpass", sans-serif;
     }
 }
 
