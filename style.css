@@ -57,7 +57,7 @@ nav .sidebar {
   height: 100vh;
   width: 100%;
   z-index: 999;
-  background-color: beige;
+  background-color: rgba(255, 255, 255, 0.363);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   display: none;
@@ -76,6 +76,7 @@ nav .sidebar a {
   height: -moz-fit-content;
   height: fit-content;
   margin-top: 3.5vh;
+  color: black;
 }
 nav .sidebar a:active {
   text-decoration: underline;
@@ -94,7 +95,13 @@ nav .sidebar a:active {
   width: 80%;
   text-align: center;
 }
-.startsida-main p {
+.startsida-main .p1 {
+  color: black;
+  margin-top: 2em;
+  width: 80%;
+  text-align: center;
+}
+.startsida-main .p2 {
   color: black;
   margin-top: 2em;
   width: 80%;
@@ -150,6 +157,7 @@ footer {
   height: 10vh;
   width: 100%;
   background-color: #9B1717;
+  margin: 0;
   position: sticky;
   bottom: 0;
 }
