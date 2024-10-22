@@ -120,204 +120,377 @@ nav {
         text-align: center;
     }
 
-    .p1 {
+    p {
         color: $font-color;
         margin-top: 2em;
         width: 70%;
         text-align: center;
     }
 
-    .p2 {
-        color: $font-color;
-        margin-top: 2em;
-        width: 70%;
-        text-align: center;
-    }
-
-
+    // img {
+    //     margin-top: 2em;
+    //     width: 90%;
+        
+    // }
 
 }
 
 // Evenemang
-.event_rubrik {
-    font-size: 1.5rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    font-family: "Overpass", sans-serif;
-}
-
 .evenemang_main {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
+
+    .event_rubrik {
+        font-size: 2.5rem;
+        font-family: $font-family-event_rubrik;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+
+    .beskrivning_event {
+        font-size: 1rem;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin-bottom: 1rem;
+    }
+
 }
 
 .event {
     display: flex;
-    flex-direction: column;
-    // width: 100%;
+    flex-direction: column;   
     margin-top: 1.5rem; // 24px
     margin-bottom: 2rem; // 36px
     padding: 1rem; // 16px
     align-items: center;
     width: 50%; // All elements the same width
     font-family: "Hind Siliguri", sans-serif;
-    box-shadow: 0rem 1.5rem 1.5rem 1rem rgba(0, 0, 0, .5); // first value horizontal offset, second vertical offset
+
+
+    background-color: rgb(252, 247, 242); // Background color from recensioner
+    color: rgb(18, 13, 13); // Text color for contrast
+    box-shadow: 0 10px 25px rgb(220, 134, 134); // Box-shadow with the same color and intensity
+
+    border-radius: 10px; // Slightly rounded corners for a softer look
+    transition: transform 0.2s, box-shadow 0.2s; // Transition for smooth hover effect
+
+     &:hover {
+        transform: scale(1.1); // Enlarges on hover
+         box-shadow: 0 15px 30px rgb(220, 134, 134); // Darker shadow on hover for depth
+        }
 }
 
 .evenemang_dl {
-    display: grid; // Best for two dimentional layout, using grid not flex
+    display: grid; // Gid Best for two dimentional layout, not flex
     grid-template-columns: auto 1fr; // Makes info appear side by side instead of stacking vertically
     gap: 10px 20px; // First value gap between rows (vertical spacing) second value gap between columns (horizontal spacing)
-    align-items: center
-}
+    align-items: center;
 
-dt {
-    font-weight: bold; // Writing bold, sticks out more
-    margin-top: 7%;
-}
+    dt {
+        font-weight: bold; // Writing bold, sticks out more
+        margin-top: 7%;
+    }
 
-dd {
-    margin: 0; // Removes any default margin that might be applied to the <dd> (description data) element by the browser.
+    dd {
+        margin: 0; // Removes any default margin that might be applied to the <dd> (description data) element by the browser.
+    }
 }
 
 // Nyheter
 
-.nyhetsmain{
+.nyhetsmain {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     min-height: 100vh;
-    width: 100%;    
-}
-
-.veckansbok { //fixa z-index
-    width: 81%;
-    height: 24%;
-    position: absolute;
-    top: 15%;
-   
-    text-align: center;
-    z-index: -100;
-   }
-   
-   .test{
-     object-fit: cover;
-     width: 100%; /* Gör att bilden fyller förälderns bredd */
-     height: 100%;
-   }
-   
-   
-   .genre{
-     display: flex;
-     text-align: left;
-     height: fit-content;
-     width: fit-content;
-   
-     position: absolute;
-     left: 10%;
-     z-index: -100;
-     top: 50%;
-   
-     font-size: large;
-     font-weight: bold;
-   }
-   
-   .genre2{
-    display: flex;
-    text-align: left;
-    height: fit-content;
-    width: fit-content;
-  
-    position: absolute;
-    bottom: 2%;
-    left: 10%;
-    z-index: -100;
-    font-size: large;
-    font-weight: bold;
-}
-
-   .förstaraden {
-     display: flex; 
-     overflow-x: auto; 
-     scroll-snap-type: x mandatory; 
-     height: fit-content;
-     width: 80%;
-     bottom: 6%;
-     gap: 16px; /* gap mellan böckerna */
-     scroll-behavior: smooth; 
-
-     padding-top: 200px;
-   }
-   
-   .andraraden {
-     display: flex; 
-     overflow-x: auto; 
-     scroll-snap-type: x mandatory;
-     height: fit-content;
-     width: 80%; /* Fyller hela bredden */
-     //position: absolute;
-     bottom: -35%;
-   
-     gap: 16px; /* Mellanrum mellan böckerna */
-     scroll-behavior: smooth; 
-   }
-   
-   .tredjeraden {
-    display: flex; 
-    overflow-x: auto; 
-    scroll-snap-type: x mandatory;
-    height: fit-content;
-    width: 80%; 
-    position: absolute;
-    bottom: -77%;
-  
-    gap: 16px; /* mellanrum mellan böckerna */
-    scroll-behavior: smooth; 
+    width: 100vw;
+    overflow-x: hidden; /* Hindrar horisontell scroll på huvudcontainern */
   }
+  
+  .veckansbok { 
+      width: 30%;
+      height: 10%;
+      top: 15%;
+      text-align: center;
+      padding-top: 20px;
+  
+      .veckans img{
+          object-fit: contain;
+          width: 100%; /* Gör att bilden fyller förälderns bredd */
+          height: 100%;
+        }
+     }
+     
+     
+     
+  .förstaraden {
+       display: flex; 
+       overflow-x: auto;  /* Tillåter horisontell scroll på förstaraden */
+       scroll-snap-type: x mandatory;
+       height: fit-content;
+       width: 80%; 
+       gap: 16px; 
+       scroll-behavior: smooth; 
+  
+  
+       .genre{
+          display: flex;
+          text-align: left;
+          height: fit-content;
+          width: fit-content;
+      
+          left: 10%;
+          top: 54%;
+      
+          font-size: large;
+          font-weight: bold;
 
-   .genrebok {
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     align-items: center;
-     height: 300px; /* Fast höjd för alla böcker */
-     width: 200px;  /* Fast bredd för alla böcker */
-     background-color: #e2dada;
-     flex-shrink: 0; 
-     scroll-snap-align: start;
-   }
-   
-   .genrebok picture {
-     height: 80%; /* Se till att bilden fyller 80% av bokhöjden */
-     width: 100%; 
-     display: flex; 
-     justify-content: center; 
-     //align-items: center; 
-   }
-   
-   .bokbild img {
-     object-fit: contain;
-     width: 100%; 
-     height: 100%; 
-     display: block;
-     transition: transform 0.2s; /* Ändrat från scale till transform */
-   }
-   
-   .bokbild:hover { /* Inga mellanslag */
-     transform: scale(1.05);
-     cursor: pointer;
-   }
-   
-   .genrebok p {
-     width: 100%;
-     text-align: center;
-     margin: 0;
-     padding-top: 5px;
-     font-size: 14px;
-   }
+          padding: 20px;
+      }
+  }
+     
+   .andraraden {
+       display: flex; 
+       overflow-x: auto;  /* Tillåter horisontell scroll på förstaraden */
+       scroll-snap-type: x mandatory;
+       height: fit-content;
+       width: 80%; 
+       gap: 16px; 
+       scroll-behavior: smooth; 
+  
+  
+       .genre2{
+          display: flex;
+          text-align: left;
+          height: fit-content;
+          width: fit-content;
+      
+          bottom: 10%;
+          left: 10%;
+          font-size: large;
+          font-weight: bold;
 
+          padding: 20px;
+      }
+  }
+     
+  .tredjeraden {
+      display: flex; 
+      overflow-x: auto; 
+      scroll-snap-type: x mandatory;
+      height: fit-content;
+      width: 80%; 
+  
+      gap: 16px; 
+      scroll-behavior: smooth; 
+  
+      .genre3{
+          display: flex;
+          text-align: left;
+          height: fit-content;
+          width: fit-content;
+        
+          bottom: -23%;
+          left: 10%;
+          font-size: large;
+          font-weight: bold;
+
+          padding: 20px;
+      }
+  }
+  
+     .genrebok {
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       //height: 200px; /* Fast höjd för alla böcker */
+       background-color: #e2dada;
+       flex-shrink: 0; 
+       scroll-snap-align: start;
+  
+       .genrebok picture {
+          max-height: 70%; 
+          width: 100%; 
+          display: flex; 
+          justify-content: center; 
+  
+          .bokbild img{
+              object-fit: contain;
+              width: 100%; 
+              height: 70%; 
+              display: block;
+              transition: transform 0.2s; /* Ändrat från scale till transform */
+            }
+  
+            .bokbild:hover { /* Inga mellanslag */
+              transform: scale(1.05);
+              cursor: pointer;
+            }
+        }
+  
+        .genrebok p {
+          width: 100%;
+          text-align: center;
+          margin: 0;
+          padding-top: 5px;
+          font-size: 5px;
+        }
+  }
+     
+  @media (min-width: 394px){
+      
+      .veckansbok {
+        width: 60%;
+        height: 10%;
+        top: 15%;
+        text-align: center;
+        padding-top: 20px;
+  
+      .veckans img{
+          object-fit: contain;
+          width: 100%; /* Gör att bilden fyller förälderns bredd */
+          height: 100%;
+        }
+      }
+.genrebok {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #e2dada;
+        flex-shrink: 0; 
+        scroll-snap-align: start;
+        width: 20%;
+
+        .genrebok p {
+            width: 100%;
+            text-align: center;
+            margin: 0;
+            padding-top: 5px;
+            font-size: 20px;
+          }
+    }
+}
+      .genre{
+        display: flex;
+        text-align: left;
+
+        height: fit-content;
+        width: fit-content;
+        padding: 20px;
+
+        font-size: xx-large;
+        font-weight: bold;
+        
+      }
+
+      .genre2{
+       display: flex;
+        text-align: left;
+
+        height: fit-content;
+        width: fit-content;
+        padding: 20px;
+        
+        font-size: xx-large;
+        font-weight: bold;
+      }
+
+      .genre3{
+        display: flex;
+        text-align: left;
+
+        height: fit-content;
+        width: fit-content;
+        padding: 20px;
+        
+        font-size: xx-large;
+        font-weight: bold;
+      }
+  
+  
+  @media (max-width: 393px){
+      .genrebok {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center; 
+          width: 40%;
+          background-color: #e2dada;
+          flex-shrink: 0; 
+          scroll-snap-align: start;
+      }
+
+      .veckansbok {
+        width: 60%;
+        height: 10%;
+        top: 15%;
+        text-align: center;
+        padding-top: 20px;
+  
+      .veckans img{
+          object-fit: contain;
+          width: 100%; /* Gör att bilden fyller förälderns bredd */
+          height: 100%;
+        }
+      }
+
+      .genrebok p {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        padding-top: 5px;
+        font-size: 12px;
+      }
+
+      .genre{
+        display: flex;
+        text-align: left;
+
+        height: fit-content;
+        width: fit-content;
+        padding: 20px;
+
+        font-size: large;
+        font-weight: bold;
+        
+      }
+
+      .genre2{
+       display: flex;
+        text-align: left;
+
+        height: fit-content;
+        width: fit-content;
+        padding: 20px;
+        
+        font-size: large;
+        font-weight: bold;
+      }
+
+      .genre3{
+        display: flex;
+        text-align: left;
+
+        height: fit-content;
+        width: fit-content;
+        padding: 20px;
+        
+        font-size: large;
+        font-weight: bold;
+      }
+}
+  
+
+
+
+
+
+  
    /* Nyhets Scrollbarn styling */
 
    ::-webkit-scrollbar {
@@ -342,21 +515,10 @@ dd {
 //   Recensioner
 
 .rev-section{
-   
     margin: auto;
     padding: 1rem;
-    max-width: 1000px;
+    min-width: 100%;
     text-align: center;
-
-    img{
-        display: flex;
-        flex-direction: row;
-        width: 75%;
-        height: 75%;
-        object-fit: cover;
-        border-radius: 50%;
-        box-shadow: 0 10px 25px rgb(231, 138, 138);
-    }
 }
 .title{
     font-size: 2.5rem;
@@ -368,53 +530,75 @@ dd {
     font-size: 1.1rem;
     color: rgb(112, 100, 100);
     font-style: italic;
+    padding-bottom: 70px;
+}
+.evenemang{
+    animation: evenemang 20s linear infinite ;
+    white-space: nowrap;
+    padding-bottom: 70px;
+}
+@keyframes evenemang{
+    from{
+        transform: translateX(100%);
+    }
+    to{
+        transform: translateX(-100%);
+    }
 }
 .reviews{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin: 2rem auto;
-    flex-wrap: wrap;
-}
-.review{
-    margin:  1rem;
-    min-width: 30px;
-    
-}
-.head-review{
-    display: flex;
-    flex-direction: row;
-    margin: 1.75rem auto;
-    width: 150px;
-    height: 150px;
-    border-radius: 10%;
-}
+    display: grid;
+    gap: 2rem;
 
+}
 .body-review{
+    width: 100%;
     background-color: rgb(252, 247, 242);
-    padding: 2.5rem;
+    padding: 2rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
     box-shadow:0 5px 15px rgb(220, 134, 134);
+    cursor: pointer;
+    img{
+        max-width: 300px;
+        height: 150px;
+        box-shadow: 0 10px 25px rgb(231, 138, 138);
+        border-radius: 30px;
+
+    }
 }
 .body-review:hover{
+   
     transform: scale(1.1);
 }
 .namve-review{
+   
     font-size: 1.5rem;
     color: black;
     margin-bottom: .25rem;
 }
 .place-review{
+    position: relative;
+    top: 40px;
+    right: 70px;
     color: blue;
     font-size: 1rem;
     margin-bottom:.25rem;
     font-style: italic;
 }
 .rating{
+    font-size: 20px;
+    display: flex;
+    position: relative;
+    top: 70px;
+    right: 190px;
     color: rgba(255, 243, 6, 0.909);
-    margin: 1rem 0;
+    margin: 2rem 0;
 }
 .description{
+    width: 200px;
+    height: 100px;
+    box-shadow: 0 10px 25px rgb(231, 138, 138);
     color: rgb(193, 178, 178);
     letter-spacing: 1px;
     line-height: 1.5rem;

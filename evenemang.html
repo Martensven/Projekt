@@ -6,6 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <head>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+      
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Overpass:ital,wght@0,100..900;1,100..900&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    
 </head>
 
 <body>
@@ -26,13 +46,13 @@
                     </svg></a></li>
             <li><a href="nyheter.html">Nyheter</a></li>
             <li><a href="evenemang.html">Evenemang</a></li>
-            <li><a href="recensioner.html">Personalens tips</a></li>
+            <li><a href="recensioner.html">Recensioner</a></li>
         </ul>
 
         <ul>
             <li class="show-on-desktop"><a href="nyheter.html">Nyheter</a></li>
             <li class="show-on-desktop"><a href="evenemang.html">Evenemang</a></li>
-            <li class="show-on-desktop"><a href="recensioner.html">Personalens tips</a></li>
+            <li class="show-on-desktop"><a href="recensioner.html">Recensioner</a></li>
             <li class="hide-on-desktop" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg"
                         height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000">
                         <path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z" />
@@ -45,10 +65,12 @@
 
     <main class="evenemang_main">
 
-        <h3 class="event_rubrik">Kommande evenemang!</h3>
+        <h3 class="event_rubrik">Kommande evenemang</h3>
+
+        <h6 class="beskrivning_event">Följ med på några av våra spännande evenemang!</h6>
         
         <article class="event">
-            <h3>Författarträff med J.K. Rowling</h3>
+            <h3 class="font-bold">Författarträff med J.K. Rowling&#129529;</h3>
             <dl class="evenemang_dl">
                 <dt>Stad:</dt>
                 <dd>Gävle</dd>
@@ -61,7 +83,7 @@
 
 
         <article class="event">
-        <h3>Boksignering: Benådaren</h3>
+        <h3 class="font-bold">Halloween-special&#127875;</h3>
         <dl class="evenemang_dl">
             <dt>Stad:</dt>
             <dd>Gävle</dd>
@@ -74,7 +96,7 @@
 
 
         <article class="event">
-        <h3>Författarträff med Katarina Wennstam</h3>
+        <h3 class="font-bold">Författarträff med Katarina Wennstam &#128366;</h3>
         <dl class="evenemang_dl">
             <dt>Stad:</dt>
             <dd>Gävle</dd>
@@ -87,7 +109,7 @@
 
 
         <article class="event">
-        <h3>Författarträff med Pascal Engman</h3>
+        <h3 class="font-bold">Författarträff med Pascal Engman &#128366;</h3>
         <dl class="evenemang_dl">
             <dt>Stad:</dt>
             <dd>Gävle</dd>
@@ -100,7 +122,7 @@
 
 
         <article class="event">
-        <h3>Even för barn</h3>
+        <h3 class="font-bold">Event för barn&#127917;</h3>
         <dl class="evenemang_dl">
             <dt>Stad:</dt>
             <dd>Gävle</dd>
@@ -113,7 +135,7 @@
 
 
         <article class="event">
-        <h3>Välkommen på bokrelease!</h3>
+        <h3 class="font-bold">Välkommen på bokrelease!&#128218;</h3>
         <dl class="evenemang_dl">
             <dt>Stad:</dt>
             <dd>Gävle</dd>
@@ -126,7 +148,7 @@
 
 
         <article class="event">
-        <h3>Pysselevent för barn</h3>
+        <h3 class="font-bold">Pysselevent för barn&#127912;</h3>
         <dl class="evenemang_dl">
             <dt>Stad:</dt>
             <dd>Gävle</dd>
@@ -139,7 +161,7 @@
 
 
         <article class="event">
-        <h3>Julkalas &#127877;</h3>
+        <h3 class="font-bold">Julkalas&#127877;</h3>
         <dl class="evenemang_dl">
             <dt>Stad:</dt>
             <dd>Gävle</dd>

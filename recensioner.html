@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Recensioner</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -27,13 +29,13 @@
                     </svg></a></li>
             <li><a href="nyheter.html">Nyheter</a></li>
             <li><a href="evenemang.html">Evenemang</a></li>
-            <li><a href="recensioner.html">Personalens tips</a></li>
+            <li><a href="recensioner.html">Recensioner</a></li>
         </ul>
 
         <ul>
             <li class="show-on-desktop"><a href="nyheter.html">Nyheter</a></li>
             <li class="show-on-desktop"><a href="evenemang.html">Evenemang</a></li>
-            <li class="show-on-desktop"><a href="recensioner.html">Personalens tips</a></li>
+            <li class="show-on-desktop"><a href="recensioner.html">Recensioner</a></li>
             <li class="hide-on-desktop" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg"
                         height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000">
                         <path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z" />
@@ -48,74 +50,88 @@
         <section class="rev-section">
             <h2 class="title">Recensioner</h2>
             <p class="note">Din åsikt är viktigt för oss.!</p>
+            <section class="evenemang">
+                <h3>
+                    <p>Den 29 Oktober, författarträff med J.K. Rowling, träffen pågår mellan kl 14:00 till 16:00.
+                        VÄLKOMMEN</p>
+                </h3>
+            </section>
             <section class="reviews">
-                <section class="review">
-                       <img src="OIP (1).jpg" width="250px">
-                    <section class="body-review">
-                        <section class="namve-review">Madelen</section>
-                        <section class="place-review">Gävle</section>
-                        <section class="rating">
-                            <i class="fa-duotone fa-solid fa-star"></i>
-                            <i class="fa-duotone fa-solid fa-star"></i>
-                            <i class="fa-duotone fa-solid fa-star"></i>
-                            <i class="fa-duotone fa-solid fa-star"></i>
-                            <i class="fa-duotone fa-solid fa-star"></i>
-                           
-                        </section>
-                        <section class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </section>
+                <section class="body-review">
+                    <img class="img" src="https://bilder.akademibokhandeln.se/images_akb/9789179871956_383/bleke-karl"
+                        alt=" på 5">
+                    <section class="namve-review">Madelen</section>
+                    <section class="place-review">Gävle</section>
+                    <section class="rating">
+                        <i class="fa-duotone fa-solid fa-star"></i>
+                        <i class="fa-duotone fa-solid fa-star"></i>
+                        <i class="fa-duotone fa-solid fa-star"></i>
+                        <i class="fa-duotone fa-solid fa-star"></i>
+                        <i class="fa-duotone fa-solid fa-star"></i>
+                    </section>
+                    <section class="description">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        i deserunt officiis quae? Cum obcaecati
                     </section>
                 </section>
-                <section class="review">
-                    <section class="head-review">
-                        <img src="OIP (2).jpg" width="250px">
+
+                <section class="body-review">
+                    <img class="img"
+                        src="https://bilder.akademibokhandeln.se/images_akb/9789176215463_383/romarnas-skrack"
+                        alt="bok 4">
+                    <section class="namve-review">Mattias</section>
+                    <section class="place-review">Norrtälje</section>
+                    <section class="rating">
+
+                        <i class="fa-duotone fa-solid fa-star"></i>
+                        <i class="fa-duotone fa-solid fa-star"></i>
+                        <i class="fa-duotone fa-solid fa-star"></i>
+                        <i class="fa-duotone fa-solid fa-star"></i>
+                        <i class="fa-sharp fa-regular fa-star"></i>
                     </section>
-                    <section class="body-review">
-                        <section class="namve-review">Mattias</section>
-                        <section class="place-review">Norrtälje</section>
-                        <section class="rating">
-                            <i class="fa-duotone fa-solid fa-star"></i>
-                            <i class="fa-duotone fa-solid fa-star"></i>
-                            <i class="fa-duotone fa-solid fa-star"></i>
-                            <i class="fa-duotone fa-solid fa-star"></i>
-                            <i class="fa-sharp fa-regular fa-star"></i>
-                        </section>
-                        <section class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit..</section>
+                    <section class="description">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit..
+                        ncidunt tenetur enim quis tempore sequi rem cumque fugit
                     </section>
-                </section>  <section class="review">
-                    <section class="head-review">
-                        <img src="R.jpg" width="250px">
+                </section>
+
+                <section class="body-review">
+                    <img class="img" src="https://bilder.akademibokhandeln.se/images_akb/9789180775397_383/ond-jul"
+                        alt="på 6">
+                    <section class="namve-review">Mårten</section>
+                    <section class="place-review">Eskilstuna</section>
+                    <section class="rating">
+                        <i class="fa-duotone fa-solid fa-star"></i>
+                        <i class="fa-duotone fa-solid fa-star"></i>
+                        <i class="fa-duotone fa-solid fa-star"></i>
+                        <i class="fa-duotone fa-solid fa-star"></i>
+                        <i class="fa-duotone fa-solid fa-star"></i>
                     </section>
-                    <section class="body-review">
-                        <section class="namve-review">Mårten</section>
-                        <section class="place-review">Eskilstuna</section>
-                        <section class="rating">
-                            <i class="fa-duotone fa-solid fa-star"></i>
-                            <i class="fa-duotone fa-solid fa-star"></i>
-                            <i class="fa-duotone fa-solid fa-star"></i>
-                            <i class="fa-duotone fa-solid fa-star"></i>
-                            <i class="fa-duotone fa-solid fa-star"></i>
-                        </section>
-                        <section class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</section>
+                    <section class="description">
+                        psum dolor sit amet, consectetur adipisicing elit. Commodi atque explicabo
                     </section>
-                </section>  <section class="review">
-                    <section class="head-review">
-                        <img src="strump-jpg.jpg" width="250px">
+                </section>
+
+                <section class="body-review">
+                    <img class="img" src="https://bilder.akademibokhandeln.se/images_akb/9789179877835_383/dodlig-dans"
+                        alt="på 1">
+
+                    <section class="namve-review">Gentiana</section>
+                    <section class="place-review">Katrineholm</section>
+                    <section class="rating">
+                        <i class="fa-duotone fa-solid fa-star"></i>
+                        <i class="fa-duotone fa-solid fa-star"></i>
+                        <i class="fa-duotone fa-solid fa-star"></i>
+                        <i class="fa-duotone fa-solid fa-star"></i>
+                        <i class="fa-sharp fa-regular fa-star"></i>
                     </section>
-                    <section class="body-review">
-                        <section class="namve-review">Gentiana</section>
-                        <section class="place-review">Katrineholm</section>
-                        <section class="rating">
-                            <i class="fa-duotone fa-solid fa-star"></i>
-                            <i class="fa-duotone fa-solid fa-star"></i>
-                            <i class="fa-duotone fa-solid fa-star"></i>
-                            <i class="fa-duotone fa-solid fa-star"></i>
-                            <i class="fa-sharp fa-regular fa-star"></i>
-                        </section>
-                        <section class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. .</section>
+                    <section class="description">
+                        Lorem ipsum dolor sit cere quos atque optio officia ipsa provident doloribus perspiciatis
                     </section>
                 </section>
             </section>
         </section>
+
     </main>
 
     <footer class="flex justify-center items-center text-white h-20 w-full m-0 sticky bottom-0 bg-red-900">
