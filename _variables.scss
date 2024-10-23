@@ -8,14 +8,14 @@ $font-size: 1rem;  // Generell font storlek på 16px, default storlek
 $font-size2: 1,5rem; // 24px
 
 // Spacing (margins)
-$spacing:1rem; //16 px
+$spacing: 1rem; //16 px
 $spacing2: 1.5rem; //24px
 $spacing_bottom: 2rem; //spacing for margin bottom that is 32px
 
 
 // Evenemang fonts
-$font-family-event_rubrik:"Roboto Slab",  sans-serif; // even_rubrik
-$font-family-event: "Hind Siliguri", sans-serif; // .event
-$font-family-event_beskrivning: "Noto Serif Oriya", sans-serif; // event_beskrivning
+$font-rubrik:"Roboto Slab",  sans-serif; // even_rubrik (kommande evenemang) (font-family event rubrik)
+$font-underrubrik: "Hind Siliguri", sans-serif; // .event  boks med text om event (författarträff osv) (event)
+$font-paragraph: "Noto Serif Oriya", sans-serif; // event_beskrivning (följ med på spännande evenemang)
 
-$font-size_rubrik: 2rem;
+$font-size_rubrik: 2rem; //(kommande evenemang)

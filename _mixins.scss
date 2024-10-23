@@ -26,3 +26,14 @@
     align-items: center;
   }
 
+
+
+
+  // Nyheter
+
+  @mixin genre{
+    display: flex;
+    text-align: left;
+    height: fit-content;
+    width: fit-content;
+  }

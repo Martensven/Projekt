@@ -19,6 +19,7 @@ body {
 
 nav {
     background-color: $hf-color;
+    font-family: $font-rubrik;
     color: white;
     width: 100%;
     height: 10vh;
@@ -49,6 +50,7 @@ nav {
         display: flex;
         align-items: center;
         color: white;
+        font-family: $font-paragraph;
 
         .pink {
             color: pink;
@@ -67,13 +69,13 @@ nav {
         position: fixed;
         top: 0;
         right: 0;
-        height: 100%;
+        height: 30%;
         width: 100%;
         // z-index: 999;
         // "z-index: 999" Gör så att sidebar alltid ligger överst
         color: white;
-        background-color: #7f1d1d;
-        // backdrop-filter: blur(10px);
+        background-color: #7f1d1d62;
+        backdrop-filter: blur(10px);
         display: none;
         flex-direction: column;
         align-items: flex-start;
@@ -113,14 +115,19 @@ nav {
     justify-items: center;
     align-items: center;
 
-    h2 {
+    h1 {
         margin-top: 2em;
         width: 60%;
         text-align: center;
+        font-family: $font-rubrik;
+        font-size: $font-size_rubrik;
+        
     }
 
     p {
+        font-family: $font-paragraph;
         color: $font-color;
+
         margin-top: 2em;
         width: 70%;
         text-align: center;
@@ -149,7 +156,7 @@ nav {
         // align-items: center;
         // text-align: center;
         font-size: $font-size_rubrik; //2rem (BYTA?)
-        font-family: $font-family-event_rubrik;
+        font-family: $font-rubrik;
         margin-top: $spacing;  //1rem
         margin-bottom: $spacing //1rem
     }
@@ -162,7 +169,7 @@ nav {
         // align-items: center;
         // text-align: center;
         font-size: $font-size; //1rem
-        font-family: $font-family-event_beskrivning;
+        font-family: $font-paragraph;
         margin-bottom: $spacing // 1rem;
     }
 
@@ -177,7 +184,7 @@ nav {
     margin-bottom: $spacing_bottom; // 2rem;
     padding: $spacing; // 1rem; 
     width: 90%; // All elements the same width
-    font-family: "Hind Siliguri", sans-serif;
+    font-family: $font-underrubrik;
 
 
     background-color: rgb(252, 247, 242); // Background color from recensioner
@@ -213,9 +220,10 @@ nav {
 // Nyheter
 
 .nyhetsmain {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center;
+    //display: flex;
+    //justify-content: center;
+    //align-items: center;
     flex-direction: column;
     min-height: 100vh;
     width: 100vw;
@@ -229,6 +237,8 @@ nav {
     top: 15%;
     text-align: center;
     padding-top: 20px;
+    font-size: 30px;
+    font-family: $font-rubrik;
 
     .veckans img {
         object-fit: contain;
@@ -252,10 +262,11 @@ nav {
 
 
     .genre {
-        display: flex;
-        text-align: left;
-        height: fit-content;
-        width: fit-content;
+        @include genre;
+       // display: flex;
+       // text-align: left;
+       // height: fit-content;
+       // width: fit-content;
 
         left: 10%;
         top: 54%;
@@ -279,10 +290,11 @@ nav {
 
 
     .genre2 {
-        display: flex;
-        text-align: left;
-        height: fit-content;
-        width: fit-content;
+        @include genre;
+        // display: flex;
+        // text-align: left;
+        // height: fit-content;
+        // width: fit-content;
 
         bottom: 10%;
         left: 10%;
@@ -304,10 +316,11 @@ nav {
     scroll-behavior: smooth;
 
     .genre3 {
-        display: flex;
-        text-align: left;
-        height: fit-content;
-        width: fit-content;
+        @include genre;
+       // display: flex;
+       // text-align: left;
+       // height: fit-content;
+       // width: fit-content;
 
         bottom: -23%;
         left: 10%;
@@ -319,10 +332,12 @@ nav {
 }
 
 .genrebok {
-    display: flex;
+    @include flex-center;
+    //display: flex;
+    //justify-content: center;
+    //align-items: center;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+
     //height: 200px; /* Fast höjd för alla böcker */
     background-color: #e2dada;
     flex-shrink: 0;
@@ -334,7 +349,7 @@ nav {
         display: flex;
         justify-content: center;
 
-        .bokbild img {
+        .bokbild{
             object-fit: contain;
             width: 100%;
             height: 70%;
@@ -344,7 +359,6 @@ nav {
         }
 
         .bokbild:hover {
-            /* Inga mellanslag */
             transform: scale(1.05);
             cursor: pointer;
         }
@@ -362,11 +376,13 @@ nav {
 @media (min-width: 394px) {
 
     .veckansbok {
-        width: 60%;
+        width: 40%;
         height: 10%;
         top: 15%;
         text-align: center;
         padding-top: 20px;
+        font-size: 30px;
+        font-family: $font-rubrik;
 
         .veckans img {
             object-fit: contain;
@@ -377,10 +393,11 @@ nav {
     }
 
     .genrebok {
-        display: flex;
+        @include flex-center;
+        //display: flex;
+        //justify-content: center;
+        //align-items: center;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
         background-color: #e2dada;
         flex-shrink: 0;
         scroll-snap-align: start;
@@ -397,11 +414,11 @@ nav {
 }
 
 .genre {
-    display: flex;
-    text-align: left;
-
-    height: fit-content;
-    width: fit-content;
+    @include genre;
+    // display: flex;
+    // text-align: left;
+    // height: fit-content;
+    // width: fit-content;
     padding: 20px;
 
     font-size: xx-large;
@@ -410,11 +427,11 @@ nav {
 }
 
 .genre2 {
-    display: flex;
-    text-align: left;
-
-    height: fit-content;
-    width: fit-content;
+    @include genre;
+    // display: flex;
+    // text-align: left;
+    // height: fit-content;
+    // width: fit-content;
     padding: 20px;
 
     font-size: xx-large;
@@ -422,11 +439,11 @@ nav {
 }
 
 .genre3 {
-    display: flex;
-    text-align: left;
-
-    height: fit-content;
-    width: fit-content;
+    @include genre;
+    // display: flex;
+    // text-align: left;
+    // height: fit-content;
+    // width: fit-content;
     padding: 20px;
 
     font-size: xx-large;
@@ -436,10 +453,11 @@ nav {
 
 @media (max-width: 393px) {
     .genrebok {
-        display: flex;
+        @include flex-center;
+        //display: flex;
+        //justify-content: center;
+        //align-items: center;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
         width: 40%;
         background-color: #e2dada;
         flex-shrink: 0;
@@ -452,6 +470,8 @@ nav {
         top: 15%;
         text-align: center;
         padding-top: 20px;
+        font-size: 30px;
+        font-family: $font-rubrik;
 
         .veckans img {
             object-fit: contain;
@@ -470,11 +490,11 @@ nav {
     }
 
     .genre {
-        display: flex;
-        text-align: left;
-
-        height: fit-content;
-        width: fit-content;
+        @include genre;
+        // display: flex;
+        // text-align: left;
+        // height: fit-content;
+        // width: fit-content;
         padding: 20px;
 
         font-size: large;
@@ -483,11 +503,11 @@ nav {
     }
 
     .genre2 {
-        display: flex;
-        text-align: left;
-
-        height: fit-content;
-        width: fit-content;
+        @include genre;
+        // display: flex;
+        // text-align: left;
+        // height: fit-content;
+        // width: fit-content;
         padding: 20px;
 
         font-size: large;
@@ -495,11 +515,11 @@ nav {
     }
 
     .genre3 {
-        display: flex;
-        text-align: left;
-
-        height: fit-content;
-        width: fit-content;
+        @include genre;
+        // display: flex;
+        // text-align: left;
+        // height: fit-content;
+        // width: fit-content;
         padding: 20px;
 
         font-size: large;
@@ -544,6 +564,7 @@ nav {
 }
 
 .title {
+    font-family: $font-paragraph;
     font-size: 2.5rem;
     text-transform: uppercase;
     color: rgb(18, 13, 13);
@@ -558,19 +579,19 @@ nav {
 }
 
 // .evenemang{
-//     animation: evenemang 20s linear infinite ;
+//     animation: slide 20s linear infinite ;
 //     white-space: nowrap;
 //     padding-bottom: 70px;
 //     span{
 //         color: blue;
 //     }
 // }
-// @keyframes evenemang{
+// @keyframes slide{
 //     from{
-//         transform: translateX(100%);
+//         transform: translateX(50%);
 //     }
 //     to{
-//         transform: translateX(-100%);
+//         transform: translateX(-50%);
 //     }
 // }
 .reviews {
@@ -583,20 +604,24 @@ nav {
 }
 
 .body-review {
+    display: flex;
+    flex-direction: column;
+    font-family: $font-paragraph;
     background-color: rgb(252, 247, 242);
-    padding: 2rem;
-    gap: 2rem;
+    // padding: 2rem;
+    // gap: 2rem;
     box-shadow: 0 5px 15px rgb(220, 134, 134);
     cursor: pointer;
-
+    // border: solid;
     img {
-        max-width: 300px;
-        
+        display: flex;
+        align-self: center;
+        max-width: 40%;
         height: 150px;
         box-shadow: 0 10px 25px rgb(231, 138, 138);
         border-radius: 30px;
     }
-}
+
 
 .body-review:hover {
     transform: scale(1.1);
@@ -606,19 +631,22 @@ nav {
 .namve-review {
     font-size: 1.5rem;
     color: black;
-    margin-bottom: .25rem;
+    // margin-bottom: .25rem;
+    // border: solid;
 }
 
 .place-review {
     color: blue;
     font-size: 1rem;
-    margin-bottom: .25rem;
+    // margin-bottom: .25rem;
     font-style: italic;
+    // border: solid;
 }
 
 .rating {
     color: rgba(255, 243, 6, 0.909);
-    margin: 2rem 0;
+    // margin: 2rem 0;
+    // border: solid;
 }
 
 .description {
@@ -628,7 +656,7 @@ nav {
     line-height: 1.5rem;
     display: flex;
 }
-
+}
 @media (max-width:678px) {
     .review {
         margin-top: 1.5rem;
