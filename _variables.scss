@@ -3,7 +3,19 @@ $hf-color: #7f1d1d;
 $body-color: beige;
 $font-color: black;
 
+// Font sizes generellt
+$font-size: 1rem;  // Generell font storlek på 16px, default storlek
+$font-size2: 1,5rem; // 24px
+
+// Spacing (margins)
+$spacing:1rem; //16 px
+$spacing2: 1.5rem; //24px
+$spacing_bottom: 2rem; //spacing for margin bottom that is 32px
+
 
 // Evenemang fonts
-$font-family-event_rubrik:"Roboto Slab",  sans-serif;
+$font-family-event_rubrik:"Roboto Slab",  sans-serif; // even_rubrik
 $font-family-event: "Hind Siliguri", sans-serif; // .event
+$font-family-event_beskrivning: "Noto Serif Oriya", sans-serif; // event_beskrivning
+
+$font-size_rubrik: 2rem;

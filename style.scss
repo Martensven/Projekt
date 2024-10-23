@@ -5,7 +5,8 @@
 @import 'mixins';
 @import 'variables';
 
-html , body {
+html,
+body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
@@ -18,6 +19,7 @@ html , body {
 
 nav {
     background-color: $hf-color;
+    color: white;
     width: 100%;
     height: 10vh;
     display: flex;
@@ -25,12 +27,17 @@ nav {
     top: 0;
     // Detta är headern
 
+    svg {
+        fill: white;
+    }
+
     ul {
         width: 100%;
         list-style: none;
         display: flex;
         justify-content: flex-end;
         align-items: center;
+        color: white;
     }
 
 
@@ -48,10 +55,7 @@ nav {
             text-decoration: none;
         }
 
-        .white {
-            color: white;
-            text-decoration: none;
-        }
+        
 
     }
 
@@ -59,23 +63,17 @@ nav {
         text-decoration: underline;
     }
 
-
-
-    // nav li:first-child {
-    //     margin-right: auto;
-    // }
-
     .sidebar {
         position: fixed;
         top: 0;
         right: 0;
-        height: 100vh;
+        height: 100%;
         width: 100%;
-        z-index: 999;
+        // z-index: 999;
         // "z-index: 999" Gör så att sidebar alltid ligger överst
-
-        background-color: rgba(255, 255, 255, 0.363);
-        backdrop-filter: blur(10px);
+        color: white;
+        background-color: #7f1d1d;
+        // backdrop-filter: blur(10px);
         display: none;
         flex-direction: column;
         align-items: flex-start;
@@ -93,9 +91,10 @@ nav {
             width: 100%;
             height: fit-content;
             margin-top: 3.5vh;
-            color: black;
-            
+            color: white;
         }
+
+        
 
         a:active {
             text-decoration: underline;
@@ -130,42 +129,54 @@ nav {
     // img {
     //     margin-top: 2em;
     //     width: 90%;
-        
+
     // }
 
 }
 
 // Evenemang
 .evenemang_main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flex-column;
+    // display: flex;
+    // align-items: center;
+    // flex-direction: column;
     width: 100%;
 
     .event_rubrik {
-        font-size: 2.5rem;
+        @include center;
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        // text-align: center;
+        font-size: $font-size_rubrik; //2rem (BYTA?)
         font-family: $font-family-event_rubrik;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
+        margin-top: $spacing;  //1rem
+        margin-bottom: $spacing //1rem
     }
 
 
     .beskrivning_event {
-        font-size: 1rem;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        margin-bottom: 1rem;
+        @include center;
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        // text-align: center;
+        font-size: $font-size; //1rem
+        font-family: $font-family-event_beskrivning;
+        margin-bottom: $spacing // 1rem;
     }
 
 }
 
 .event {
-    display: flex;
-    flex-direction: column;   
-    margin-top: 1.5rem; // 24px
-    margin-bottom: 2rem; // 36px
-    padding: 1rem; // 16px
-    align-items: center;
-    width: 50%; // All elements the same width
+    @include flex-column;
+    // display: flex;
+    // align-items: center;
+    // flex-direction: column;
+    margin-top: $spacing2; //1.5rem; 
+    margin-bottom: $spacing_bottom; // 2rem;
+    padding: $spacing; // 1rem; 
+    width: 90%; // All elements the same width
     font-family: "Hind Siliguri", sans-serif;
 
 
@@ -176,17 +187,18 @@ nav {
     border-radius: 10px; // Slightly rounded corners for a softer look
     transition: transform 0.2s, box-shadow 0.2s; // Transition for smooth hover effect
 
-     &:hover {
+    &:hover {
         transform: scale(1.1); // Enlarges on hover
-         box-shadow: 0 15px 30px rgb(220, 134, 134); // Darker shadow on hover for depth
-        }
+        box-shadow: 0 15px 30px rgb(220, 134, 134); // Darker shadow on hover for depth
+    }
 }
 
 .evenemang_dl {
-    display: grid; // Gid Best for two dimentional layout, not flex
-    grid-template-columns: auto 1fr; // Makes info appear side by side instead of stacking vertically
+    @include grid;
+    // display: grid; // Gid Best for two dimentional layout, not flex
+    // align-items: center;
     gap: 10px 20px; // First value gap between rows (vertical spacing) second value gap between columns (horizontal spacing)
-    align-items: center;
+    grid-template-columns: auto 1fr; // Makes info appear side by side instead of stacking vertically
 
     dt {
         font-weight: bold; // Writing bold, sticks out more
@@ -207,162 +219,170 @@ nav {
     flex-direction: column;
     min-height: 100vh;
     width: 100vw;
-    overflow-x: hidden; /* Hindrar horisontell scroll på huvudcontainern */
-  }
-  
-  .veckansbok { 
-      width: 30%;
-      height: 10%;
-      top: 15%;
-      text-align: center;
-      padding-top: 20px;
-  
-      .veckans img{
-          object-fit: contain;
-          width: 100%; /* Gör att bilden fyller förälderns bredd */
-          height: 100%;
-        }
-     }
-     
-     
-     
-  .förstaraden {
-       display: flex; 
-       overflow-x: auto;  /* Tillåter horisontell scroll på förstaraden */
-       scroll-snap-type: x mandatory;
-       height: fit-content;
-       width: 80%; 
-       gap: 16px; 
-       scroll-behavior: smooth; 
-  
-  
-       .genre{
-          display: flex;
-          text-align: left;
-          height: fit-content;
-          width: fit-content;
-      
-          left: 10%;
-          top: 54%;
-      
-          font-size: large;
-          font-weight: bold;
+    overflow-x: hidden;
+    /* Hindrar horisontell scroll på huvudcontainern */
+}
 
-          padding: 20px;
-      }
-  }
-     
-   .andraraden {
-       display: flex; 
-       overflow-x: auto;  /* Tillåter horisontell scroll på förstaraden */
-       scroll-snap-type: x mandatory;
-       height: fit-content;
-       width: 80%; 
-       gap: 16px; 
-       scroll-behavior: smooth; 
-  
-  
-       .genre2{
-          display: flex;
-          text-align: left;
-          height: fit-content;
-          width: fit-content;
-      
-          bottom: 10%;
-          left: 10%;
-          font-size: large;
-          font-weight: bold;
+.veckansbok {
+    width: 30%;
+    height: 10%;
+    top: 15%;
+    text-align: center;
+    padding-top: 20px;
 
-          padding: 20px;
-      }
-  }
-     
-  .tredjeraden {
-      display: flex; 
-      overflow-x: auto; 
-      scroll-snap-type: x mandatory;
-      height: fit-content;
-      width: 80%; 
-  
-      gap: 16px; 
-      scroll-behavior: smooth; 
-  
-      .genre3{
-          display: flex;
-          text-align: left;
-          height: fit-content;
-          width: fit-content;
-        
-          bottom: -23%;
-          left: 10%;
-          font-size: large;
-          font-weight: bold;
+    .veckans img {
+        object-fit: contain;
+        width: 100%;
+        /* Gör att bilden fyller förälderns bredd */
+        height: 100%;
+    }
+}
 
-          padding: 20px;
-      }
-  }
-  
-     .genrebok {
-       display: flex;
-       flex-direction: column;
-       justify-content: center;
-       align-items: center;
-       //height: 200px; /* Fast höjd för alla böcker */
-       background-color: #e2dada;
-       flex-shrink: 0; 
-       scroll-snap-align: start;
-  
-       .genrebok picture {
-          max-height: 70%; 
-          width: 100%; 
-          display: flex; 
-          justify-content: center; 
-  
-          .bokbild img{
-              object-fit: contain;
-              width: 100%; 
-              height: 70%; 
-              display: block;
-              transition: transform 0.2s; /* Ändrat från scale till transform */
-            }
-  
-            .bokbild:hover { /* Inga mellanslag */
-              transform: scale(1.05);
-              cursor: pointer;
-            }
+
+
+.förstaraden {
+    display: flex;
+    overflow-x: auto;
+    /* Tillåter horisontell scroll på förstaraden */
+    scroll-snap-type: x mandatory;
+    height: fit-content;
+    width: 80%;
+    gap: 16px;
+    scroll-behavior: smooth;
+
+
+    .genre {
+        display: flex;
+        text-align: left;
+        height: fit-content;
+        width: fit-content;
+
+        left: 10%;
+        top: 54%;
+
+        font-size: large;
+        font-weight: bold;
+
+        padding: 20px;
+    }
+}
+
+.andraraden {
+    display: flex;
+    overflow-x: auto;
+    /* Tillåter horisontell scroll på förstaraden */
+    scroll-snap-type: x mandatory;
+    height: fit-content;
+    width: 80%;
+    gap: 16px;
+    scroll-behavior: smooth;
+
+
+    .genre2 {
+        display: flex;
+        text-align: left;
+        height: fit-content;
+        width: fit-content;
+
+        bottom: 10%;
+        left: 10%;
+        font-size: large;
+        font-weight: bold;
+
+        padding: 20px;
+    }
+}
+
+.tredjeraden {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    height: fit-content;
+    width: 80%;
+
+    gap: 16px;
+    scroll-behavior: smooth;
+
+    .genre3 {
+        display: flex;
+        text-align: left;
+        height: fit-content;
+        width: fit-content;
+
+        bottom: -23%;
+        left: 10%;
+        font-size: large;
+        font-weight: bold;
+
+        padding: 20px;
+    }
+}
+
+.genrebok {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    //height: 200px; /* Fast höjd för alla böcker */
+    background-color: #e2dada;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+
+    .genrebok picture {
+        max-height: 70%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .bokbild img {
+            object-fit: contain;
+            width: 100%;
+            height: 70%;
+            display: block;
+            transition: transform 0.2s;
+            /* Ändrat från scale till transform */
         }
-  
-        .genrebok p {
-          width: 100%;
-          text-align: center;
-          margin: 0;
-          padding-top: 5px;
-          font-size: 5px;
+
+        .bokbild:hover {
+            /* Inga mellanslag */
+            transform: scale(1.05);
+            cursor: pointer;
         }
-  }
-     
-  @media (min-width: 394px){
-      
-      .veckansbok {
+    }
+
+    .genrebok p {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        padding-top: 5px;
+        font-size: 5px;
+    }
+}
+
+@media (min-width: 394px) {
+
+    .veckansbok {
         width: 60%;
         height: 10%;
         top: 15%;
         text-align: center;
         padding-top: 20px;
-  
-      .veckans img{
-          object-fit: contain;
-          width: 100%; /* Gör att bilden fyller förälderns bredd */
-          height: 100%;
+
+        .veckans img {
+            object-fit: contain;
+            width: 100%;
+            /* Gör att bilden fyller förälderns bredd */
+            height: 100%;
         }
-      }
-.genrebok {
+    }
+
+    .genrebok {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         background-color: #e2dada;
-        flex-shrink: 0; 
+        flex-shrink: 0;
         scroll-snap-align: start;
         width: 20%;
 
@@ -372,82 +392,84 @@ nav {
             margin: 0;
             padding-top: 5px;
             font-size: 20px;
-          }
+        }
     }
 }
-      .genre{
+
+.genre {
+    display: flex;
+    text-align: left;
+
+    height: fit-content;
+    width: fit-content;
+    padding: 20px;
+
+    font-size: xx-large;
+    font-weight: bold;
+
+}
+
+.genre2 {
+    display: flex;
+    text-align: left;
+
+    height: fit-content;
+    width: fit-content;
+    padding: 20px;
+
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.genre3 {
+    display: flex;
+    text-align: left;
+
+    height: fit-content;
+    width: fit-content;
+    padding: 20px;
+
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+
+@media (max-width: 393px) {
+    .genrebok {
         display: flex;
-        text-align: left;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 40%;
+        background-color: #e2dada;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+    }
 
-        height: fit-content;
-        width: fit-content;
-        padding: 20px;
-
-        font-size: xx-large;
-        font-weight: bold;
-        
-      }
-
-      .genre2{
-       display: flex;
-        text-align: left;
-
-        height: fit-content;
-        width: fit-content;
-        padding: 20px;
-        
-        font-size: xx-large;
-        font-weight: bold;
-      }
-
-      .genre3{
-        display: flex;
-        text-align: left;
-
-        height: fit-content;
-        width: fit-content;
-        padding: 20px;
-        
-        font-size: xx-large;
-        font-weight: bold;
-      }
-  
-  
-  @media (max-width: 393px){
-      .genrebok {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center; 
-          width: 40%;
-          background-color: #e2dada;
-          flex-shrink: 0; 
-          scroll-snap-align: start;
-      }
-
-      .veckansbok {
+    .veckansbok {
         width: 60%;
         height: 10%;
         top: 15%;
         text-align: center;
         padding-top: 20px;
-  
-      .veckans img{
-          object-fit: contain;
-          width: 100%; /* Gör att bilden fyller förälderns bredd */
-          height: 100%;
-        }
-      }
 
-      .genrebok p {
+        .veckans img {
+            object-fit: contain;
+            width: 100%;
+            /* Gör att bilden fyller förälderns bredd */
+            height: 100%;
+        }
+    }
+
+    .genrebok p {
         width: 100%;
         text-align: center;
         margin: 0;
         padding-top: 5px;
         font-size: 12px;
-      }
+    }
 
-      .genre{
+    .genre {
         display: flex;
         text-align: left;
 
@@ -457,156 +479,161 @@ nav {
 
         font-size: large;
         font-weight: bold;
-        
-      }
 
-      .genre2{
-       display: flex;
-        text-align: left;
+    }
 
-        height: fit-content;
-        width: fit-content;
-        padding: 20px;
-        
-        font-size: large;
-        font-weight: bold;
-      }
-
-      .genre3{
+    .genre2 {
         display: flex;
         text-align: left;
 
         height: fit-content;
         width: fit-content;
         padding: 20px;
-        
+
         font-size: large;
         font-weight: bold;
-      }
+    }
+
+    .genre3 {
+        display: flex;
+        text-align: left;
+
+        height: fit-content;
+        width: fit-content;
+        padding: 20px;
+
+        font-size: large;
+        font-weight: bold;
+    }
 }
-  
 
 
 
 
 
-  
-   /* Nyhets Scrollbarn styling */
 
-   ::-webkit-scrollbar {
-    width: 12px; 
-    height: 8px; 
-  }
-  
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-    border-radius: 5px; 
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background: #888; 
-    border-radius: 5px; 
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-  }
+
+/* Nyhets Scrollbarn styling */
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
 
 //   Recensioner
 
-.rev-section{
+.rev-section {
     margin: auto;
     padding: 1rem;
-    min-width: 100%;
+    max-width: 90%;
     text-align: center;
 }
-.title{
+
+.title {
     font-size: 2.5rem;
     text-transform: uppercase;
     color: rgb(18, 13, 13);
     margin-bottom: .5rem;
 }
-.note{
+
+.note {
     font-size: 1.1rem;
     color: rgb(112, 100, 100);
     font-style: italic;
     padding-bottom: 70px;
 }
-.evenemang{
-    animation: evenemang 20s linear infinite ;
-    white-space: nowrap;
-    padding-bottom: 70px;
-}
-@keyframes evenemang{
-    from{
-        transform: translateX(100%);
-    }
-    to{
-        transform: translateX(-100%);
-    }
-}
-.reviews{
-    display: grid;
+
+// .evenemang{
+//     animation: evenemang 20s linear infinite ;
+//     white-space: nowrap;
+//     padding-bottom: 70px;
+//     span{
+//         color: blue;
+//     }
+// }
+// @keyframes evenemang{
+//     from{
+//         transform: translateX(100%);
+//     }
+//     to{
+//         transform: translateX(-100%);
+//     }
+// }
+.reviews {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 2rem;
 
 }
-.body-review{
-    width: 100%;
+
+.body-review {
     background-color: rgb(252, 247, 242);
     padding: 2rem;
-    display: flex;
-    align-items: flex-start;
     gap: 2rem;
-    box-shadow:0 5px 15px rgb(220, 134, 134);
+    box-shadow: 0 5px 15px rgb(220, 134, 134);
     cursor: pointer;
-    img{
+
+    img {
         max-width: 300px;
+        
         height: 150px;
         box-shadow: 0 10px 25px rgb(231, 138, 138);
         border-radius: 30px;
-
     }
 }
-.body-review:hover{
-   
+
+.body-review:hover {
     transform: scale(1.1);
 }
-.namve-review{
-   
+
+
+.namve-review {
     font-size: 1.5rem;
     color: black;
     margin-bottom: .25rem;
 }
-.place-review{
-    position: relative;
-    top: 40px;
-    right: 70px;
+
+.place-review {
     color: blue;
     font-size: 1rem;
-    margin-bottom:.25rem;
+    margin-bottom: .25rem;
     font-style: italic;
 }
-.rating{
-    font-size: 20px;
-    display: flex;
-    position: relative;
-    top: 70px;
-    right: 190px;
+
+.rating {
     color: rgba(255, 243, 6, 0.909);
     margin: 2rem 0;
 }
-.description{
-    width: 200px;
-    height: 100px;
+
+.description {
     box-shadow: 0 10px 25px rgb(231, 138, 138);
     color: rgb(193, 178, 178);
     letter-spacing: 1px;
     line-height: 1.5rem;
+    display: flex;
 }
-@media (max-width:678px){
-    .review{
+
+@media (max-width:678px) {
+    .review {
         margin-top: 1.5rem;
     }
+
 }
 
 
@@ -621,10 +648,8 @@ nav {
         justify-content: space-between; // Distribute space evenly between items
     }
 
-    .event_rubrik {
-        font-size: 2rem;
-        font-family: "Overpass", sans-serif;
-    }
+    
+
 }
 
 @media screen and (max-width: 800px) {
@@ -633,3 +658,8 @@ nav {
     }
 }
 
+@media(min-width:768px) {
+    .rev-section {
+        width: 50%;
+    }
+}

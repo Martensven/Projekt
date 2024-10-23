@@ -4,3 +4,25 @@
     align-items: center;
   }
 
+
+  // Evenemang 
+
+  @mixin flex-column {  // .evenemang_main   och    .event
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  @mixin center {   //  .event_rubrik    och    .beskrivning_event
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+
+  @mixin grid {  // .evenemang_dl
+    display: grid;
+    align-items: center;
+  }
+
