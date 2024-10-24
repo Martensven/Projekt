@@ -539,11 +539,7 @@ nav {
 //   Recensioner
 
 .rec {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    min-height: 100vh;
+    @include rec;
 }
 
 
@@ -586,11 +582,10 @@ nav {
     justify-content: center;
     align-items: center;
     flex-flow: row wrap;
-    
     width: 100%;}
 .boxxen{
     width: 45%;
-    min-height: 35vh;
+    min-height: 40vh;
     padding: 20px;
     margin: 15px;
     cursor: pointer;
