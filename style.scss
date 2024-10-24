@@ -69,10 +69,8 @@ nav {
         position: fixed;
         top: 0;
         right: 0;
-        height: 30%;
+        height: 100%;
         width: 100%;
-        // z-index: 999;
-        // "z-index: 999" Gör så att sidebar alltid ligger överst
         color: white;
         background-color: #7f1d1d62;
         backdrop-filter: blur(10px);
@@ -83,20 +81,12 @@ nav {
         margin: 0;
         padding: 0;
 
-
-        // .hidebar {
-        //     height: 10vh;
-        //     width: 100%;
-        // }
-
         a {
             width: 100%;
             height: fit-content;
             margin-top: 3.5vh;
             color: white;
         }
-
-        
 
         a:active {
             text-decoration: underline;
@@ -121,23 +111,15 @@ nav {
         text-align: center;
         font-family: $font-rubrik;
         font-size: $font-size_rubrik;
-        
     }
 
     p {
         font-family: $font-paragraph;
         color: $font-color;
-
         margin-top: 2em;
         width: 70%;
         text-align: center;
     }
-
-    // img {
-    //     margin-top: 2em;
-    //     width: 90%;
-
-    // }
 
 }
 
@@ -556,12 +538,21 @@ nav {
 
 //   Recensioner
 
+.rec {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+
 .rev-section{
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 100%;
+  width: 100rem;
 }
 .title{
     font-size: 2.5rem;
@@ -571,11 +562,12 @@ nav {
 }
 .note{
     font-size: 1.3rem;
-    color: rgb(112, 100, 100);
+    color: #706464;
     font-style: italic;
-    padding-bottom: 70px;
+    padding-bottom: 10px;
 }
 .evenemang{
+    text-align: center;
     box-sizing: border-box;
     color: white;
     background-color: rgba(255, 0, 0, 0.418);
@@ -593,14 +585,16 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
+    
     width: 100%;}
 .boxxen{
-    width: 500px;
+    width: 45%;
+    min-height: 35vh;
     padding: 20px;
     margin: 15px;
     cursor: pointer;
-    box-shadow:0 5px 15px rgb(220, 134, 134);
+    box-shadow:0 5px 15px #dc8686;
     background-color: rgb(252, 247, 242);
     border-radius: 20px;
 
@@ -637,7 +631,11 @@ nav {
     font-size: 0.8rem;
 }
 .reviews{
-    color: yellow;
+    color: #ca7d7d;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    // margin-top: 50px;
 }
 .box-top{
     display: flex;
@@ -647,15 +645,15 @@ nav {
 }
 .comment p{
     font-size: 0.9rem;
-    color: rgb(165, 162, 162);
+    color: #706464;
 }
 .boxxen:hover{
     transform: translateY(-10px);
     transition: all ease 0.3s;
 }
-@media(max-width: 1060px){
+@media(max-width: 1200px) {
     .boxxen{
-        width: 60%;
+        width: 90%;
         padding: 40px;
     }
 }
